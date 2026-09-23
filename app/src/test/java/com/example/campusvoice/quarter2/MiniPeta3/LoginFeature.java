@@ -23,15 +23,11 @@ public class LoginFeature {
 
        //Checking Login Info
        if (username.equals(registeredUsername) && password.equals(registeredPassword)) {
-           System.out.println("========================");
            System.out.println("Login Successful!");
            System.out.println("Welcome " + username);
-           System.out.println("========================");
        } else {
            System.out.println("Login Failed!");
            System.out.println("Invalid username or password");
-           System.out.println("Please try again.");
-           return;
        }
 
        //ADMINISTRATOR OR STUDENT INTERFACE
@@ -46,19 +42,11 @@ public class LoginFeature {
 
        if (choice == 1) {
            System.out.println("Welcome Student!");
-           System.out.println("========================");
-           System.out.println("STUDENT INTERFACE");
-           System.out.println("========================");
        } else if (choice == 2) {
            System.out.println("Welcome Administrator!");
-           System.out.println("========================");
-           System.out.println("ADMINISTRATOR INTERFACE");
-           System.out.println("========================");
        } else {
            System.out.println("Invalid choice!");
-           System.out.println("Please try again.");
        }
        input.close();
-       scanner.close();
    }
 }
