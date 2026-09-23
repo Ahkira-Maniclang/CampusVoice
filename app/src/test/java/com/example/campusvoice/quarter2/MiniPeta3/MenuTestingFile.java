@@ -28,17 +28,25 @@ public class MenuTestingFile {
             System.out.println("Generating inputs for interaction #" + interactionCount);
 
             if (interactionCount == 1) {
-                // Simulating the user typing '1' and pressing ENTER.
-                // IMPORTANT: The "\n" represents pressing the Enter key!
-                simulatedUserInput.append("1\n");
+                // Simulating user choosing Complaint (1), submitting a complaint, viewing it, and returning
+                simulatedUserInput.append("1\n"); // Choose Complaint
+                simulatedUserInput.append("1\n"); // Submit Complaint
+                simulatedUserInput.append("Broken chair in Room 301\n"); // Complaint text
+                simulatedUserInput.append("2\n"); // View Complaint
+                simulatedUserInput.append("3\n"); // Back to Dashboard
             } else if (interactionCount == 2) {
-                // Simulating the user choosing option '2', then typing '300'
-                simulatedUserInput.append("2\n");
-                simulatedUserInput.append("300\n");
+                // Simulating user choosing Feedback (2), submitting feedback, entering rating, viewing it, and returning
+                simulatedUserInput.append("2\n"); // Choose Feedback
+                simulatedUserInput.append("1\n"); // Submit Feedback
+                simulatedUserInput.append("Great facility upgrades!\n"); // Feedback text
+                simulatedUserInput.append("5\n"); // Rating
+                simulatedUserInput.append("2\n"); // View Feedback
+                simulatedUserInput.append("3\n"); // Back to Dashboard
             } else {
-                // Simulating the user choosing option '2', then typing '5000'
-                simulatedUserInput.append("2\n");
-                simulatedUserInput.append("5000\n");
+                // Simulating user choosing Feedback (2) to view previously submitted feedback
+                simulatedUserInput.append("2\n"); // Choose Feedback
+                simulatedUserInput.append("2\n"); // View Feedback
+                simulatedUserInput.append("3\n"); // Back to Dashboard
             }
             interactionCount++;
         }
@@ -49,10 +57,12 @@ public class MenuTestingFile {
          * a specific path the user takes through your menus.
          */
         System.out.println("Generating inputs for specific features...");
-        simulatedUserInput.append("3\n");    // E.g., Enter a specific sub-menu (like Settings or Combo Meals)
-        simulatedUserInput.append("1\n");    // E.g., Choose an option inside that sub-menu
-        simulatedUserInput.append("9999\n"); // E.g., Type a specific value (like a PIN or a quantity)
-        simulatedUserInput.append("3\n");    // E.g., Go back to the Main Menu
+        simulatedUserInput.append("3\n");          // Enter Settings sub-menu
+        simulatedUserInput.append("1\n");          // View Profile
+        simulatedUserInput.append("2\n");          // Change Password
+        simulatedUserInput.append("1234\n");       // Enter current password
+        simulatedUserInput.append("newpass9999\n"); // Enter new password
+        simulatedUserInput.append("3\n");          // Go back to the Main Menu
 
         /*
          * PART 3: Simulating the Exit Command
@@ -61,7 +71,7 @@ public class MenuTestingFile {
          * is empty, causing the test to crash!
          */
         System.out.println("Generating input to Exit the system...");
-        simulatedUserInput.append("4\n"); // Change '4' to whatever your Exit option is!
+        simulatedUserInput.append("4\n"); // Exit option '4'
 
         System.out.println("--- INPUT GENERATION COMPLETE ---\n");
 
@@ -81,7 +91,6 @@ public class MenuTestingFile {
 
         /*
          * 4. RUNNING YOUR ACTUAL PROGRAM
-         * TODO: Change "MainMenu" to the exact name of your main system class.
          */
         MainMenu mainSystem = new MainMenu();
 
