@@ -28,6 +28,8 @@ public class LoginFeature {
        } else {
            System.out.println("Login Failed!");
            System.out.println("Invalid username or password");
+           System.out.println("Please try again.");
+           return;
        }
 
        //ADMINISTRATOR OR STUDENT INTERFACE
