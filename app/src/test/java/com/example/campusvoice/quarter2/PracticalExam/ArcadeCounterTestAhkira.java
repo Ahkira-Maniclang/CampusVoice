@@ -26,5 +26,46 @@ import java.util.Scanner;
             arcadeSystem.start(scanner);
             scanner.close();
         }
+
+        public void start(Scanner scanner) {
+            boolean running = true;
+            while (running) {
+                System.out.println("\n--- ARCADE COUNTER SYSTEM ---");
+                System.out.println("1. Buy Tokens");
+                System.out.println("2. Claim Prize");
+                System.out.println("3. Exit");
+                System.out.print("Enter choice: ");
+
+                if (!scanner.hasNextInt()) {
+                    if (scanner.hasNext()) scanner.next();
+                    continue;
+                }
+                int choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("Tokens purchased successfully!");
+                        break;
+                    case 2:
+                        System.out.print("Enter tickets count: ");
+                        if (scanner.hasNextInt()) {
+                            int tickets = scanner.nextInt();
+                            if (tickets >= 500) {
+                                System.out.println("Congratulations! Teddy Bear Won!");
+                            } else {
+                                System.out.println("Keep Playing to earn more tickets!");
+                            }
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Exiting system. Thank you!");
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid choice!");
+                        break;
+                }
+            }
+        }
     }
 
