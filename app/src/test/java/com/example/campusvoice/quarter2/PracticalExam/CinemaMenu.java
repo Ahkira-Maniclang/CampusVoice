@@ -15,8 +15,18 @@ public class CinemaMenu {
 
             int choice = scanner.nextInt();
 
-            if (choice == 3) {
+            if (choice == 1) {
+                System.out.println("Enter age:");
+                int age = scanner.nextInt();
+
+            } else if (choice == 2) {
+                System.out.println("Snack purchase selected.");
+
+            } else if (choice == 3) {
                 running = false;
+
+            } else {
+                System.out.println("Invalid choice.");
             }
         }
     }
