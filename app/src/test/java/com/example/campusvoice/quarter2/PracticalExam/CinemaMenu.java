@@ -7,6 +7,7 @@ public class CinemaMenu {
     public void start(Scanner scanner) {
         boolean running = true;
 
+        // Continue displaying the menu until the user chooses to exit.
         while (running) {
             System.out.println("=== CINEMA MENU ===");
             System.out.println("1. Buy Ticket");
@@ -19,6 +20,7 @@ public class CinemaMenu {
                 System.out.println("Enter age:");
                 int age = scanner.nextInt();
 
+                // Check the required age before printing a ticket.
                 if (age < 18) {
                     System.out.println("Access Denied");
                 } else {
@@ -29,6 +31,7 @@ public class CinemaMenu {
                 System.out.println("Snack purchase selected.");
 
             } else if (choice == 3) {
+                System.out.println("Exiting Cinema Menu.");
                 running = false;
 
             } else {
@@ -37,4 +40,3 @@ public class CinemaMenu {
         }
     }
 }
-
