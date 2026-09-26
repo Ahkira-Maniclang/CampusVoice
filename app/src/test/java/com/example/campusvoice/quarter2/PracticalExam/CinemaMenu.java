@@ -19,6 +19,12 @@ public class CinemaMenu {
                 System.out.println("Enter age:");
                 int age = scanner.nextInt();
 
+                if (age < 18) {
+                    System.out.println("Access Denied");
+                } else {
+                    System.out.println("Ticket Printed");
+                }
+
             } else if (choice == 2) {
                 System.out.println("Snack purchase selected.");
 
@@ -31,3 +37,4 @@ public class CinemaMenu {
         }
     }
 }
+
