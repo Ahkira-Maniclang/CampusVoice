@@ -1,71 +1,85 @@
 package com.example.campusvoice.quarter2.PracticalExam;
 
-    import org.junit.Test;
+import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
-    public class ArcadeCounterTestAhkira {
-        @Test
-        public void testArcadeFlow() {
-            StringBuilder automatedInput = new StringBuilder();
-            System.out.println("--- GENERATING ARCADE TEST DATA ---");
-// Step 1: Buy tokens option
-            automatedInput.append("1\n"); // Choose Buy Tokens
-// Step 2: Test low ticket count for prize (< 500)
-            automatedInput.append("2\n"); // Choose Claim Prize
-            automatedInput.append("200\n"); // Enter 200 tickets (Expected: Keep Playing)
-// Step 3: Test high ticket count for prize (>= 500)
-            automatedInput.append("2\n"); // Choose Claim Prize
-            automatedInput.append("600\n"); // Enter 600 tickets (Expected: Teddy Bear Won)
-// Step 4: Exit system
-            automatedInput.append("3\n"); // Choose Exit
-            System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(automatedInput.toString().getBytes());
-            Scanner scanner = new Scanner(inputStream);
 
-            ArcadeCounterTestAhkira arcadeSystem = new ArcadeCounterTestAhkira();
-            arcadeSystem.start(scanner);
-            scanner.close();
-        }
+/**
+ * ArcadeCounterTestAhkira Class
+ * Unit test class to simulate and verify automated user flows through the Arcade Counter system.
+ */
+public class ArcadeCounterTestAhkira {
 
-        public void start(Scanner scanner) {
-            boolean running = true;
-            while (running) {
-                System.out.println("\n--- ARCADE COUNTER SYSTEM ---");
-                System.out.println("1. Buy Tokens");
-                System.out.println("2. Claim Prize");
-                System.out.println("3. Exit");
-                System.out.print("Enter choice: ");
+    /**
+     * Tests the automated complete user interaction flow for the Arcade Menu system.
+     */
+    @Test
+    public void testArcadeFlow() {
+        /*
+         * SYSTEM 1: Automated Input Generation (Virtual Keyboard)
+         * Uses StringBuilder to simulate user typing actions sequentially.
+         */
+        StringBuilder automatedInput = new StringBuilder();
 
-                if (!scanner.hasNextInt()) {
-                    if (scanner.hasNext()) scanner.next();
-                    continue;
-                }
-                int choice = scanner.nextInt();
+        System.out.println("--- GENERATING ARCADE TEST DATA ---");
 
-                switch (choice) {
-                    case 1:
-                        System.out.println("Tokens purchased successfully!");
-                        break;
-                    case 2:
-                        System.out.print("Enter tickets count: ");
-                        if (scanner.hasNextInt()) {
-                            int tickets = scanner.nextInt();
-                            if (tickets >= 500) {
-                                System.out.println("Congratulations! Teddy Bear Won!");
-                            } else {
-                                System.out.println("Keep Playing to earn more tickets!");
-                            }
-                        }
-                        break;
-                    case 3:
-                        System.out.println("Exiting system. Thank you!");
-                        running = false;
-                        break;
-                    default:
-                        System.out.println("Invalid choice!");
-                        break;
-                }
-            }
-        }
+        // STEP 1: Test Token Purchase System (Option 1)
+        automatedInput.append("1\n"); // Select Option 1: Buy Tokens
+        automatedInput.append("50\n"); // Enter 50 tokens quantity
+
+        automatedInput.append("1\n"); // Select Option 1: Buy Tokens
+        automatedInput.append("100\n"); // Enter 100 tokens quantity
+
+        automatedInput.append("1\n"); // Select Option 1: Buy Tokens
+        automatedInput.append("150\n"); // Enter 150 tokens quantity
+
+        // STEP 2: Test Prize Claim System with various Ticket Tiers (Option 2)
+        automatedInput.append("2\n"); // Select Option 2: Claim Prize
+        automatedInput.append("100\n"); // Enter 100 tickets (Expected: Gum Won)
+
+        automatedInput.append("2\n"); // Select Option 2: Claim Prize
+        automatedInput.append("200\n"); // Enter 200 tickets (Expected: Candy Won)
+
+        automatedInput.append("2\n"); // Select Option 2: Claim Prize
+        automatedInput.append("300\n"); // Enter 300 tickets (Expected: Candy Won)
+
+        automatedInput.append("2\n"); // Select Option 2: Claim Prize
+        automatedInput.append("400\n"); // Enter 400 tickets (Expected: Candy Won)
+
+        automatedInput.append("2\n"); // Select Option 2: Claim Prize
+        automatedInput.append("500\n"); // Enter 500 tickets (Expected: Teddy Bear Won)
+
+        automatedInput.append("2\n"); // Select Option 2: Claim Prize
+        automatedInput.append("600\n"); // Enter 600 tickets (Expected: Teddy Bear Won)
+
+        // STEP 3: Test Invalid Choice Handling System
+        automatedInput.append("99\n"); // Enter invalid choice '99'
+
+        // STEP 4: Test System Exit (Option 3)
+        automatedInput.append("3\n"); // Select Option 3: Exit
+
+        System.out.println("--- TEST DATA GENERATION COMPLETE ---\n");
+
+        /*
+         * SYSTEM 2: Stream Input Conversion
+         * Converts the generated String sequence into a ByteArrayInputStream
+         * to simulate hardware keyboard input for the Scanner.
+         */
+        ByteArrayInputStream inputStream =
+                new ByteArrayInputStream(automatedInput.toString().getBytes());
+
+        /*
+         * SYSTEM 3: Scanner Initialization
+         * Wraps the input stream in a Scanner instance passed into ArcadeMenu.
+         */
+        Scanner scanner = new Scanner(inputStream);
+
+        /*
+         * SYSTEM 4: System Execution & Connection
+         * Instantiates ArcadeMenu and executes the automated test flow.
+         */
+        ArcadeMenu arcadeSystem = new ArcadeMenu();
+        arcadeSystem.start(scanner);
+        scanner.close();
     }
-
+}
