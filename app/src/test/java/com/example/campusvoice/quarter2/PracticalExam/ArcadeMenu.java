@@ -6,17 +6,27 @@ import java.util.Scanner;
  * ArcadeMenu Class
  * Represents the interactive menu system for the Arcade Counter.
  * Handles input routing using Scanner reads, switch blocks for top-level menu routing,
- * and if-else blocks for nested conditional evaluation.
+ * if-else blocks for nested conditional evaluation, and inner logic for mathematical calculations.
  */
 public class ArcadeMenu {
 
     /**
-     * Starts and executes the Arcade Menu control loop.
+     * Starts and executes the Arcade Menu control loop with inner logic and calculations.
      *
      * @param scanner The Scanner instance used to read user inputs.
      */
     public void start(Scanner scanner) {
         boolean running = true;
+
+        // ==========================================
+        // INNER LOGIC AND MATH - STATE TRACKING VARIABLES
+        // ==========================================
+        final double TOKEN_PRICE_RATE = 5.0; // Math constant: 5.0 PHP per token
+        int totalTokensPurchased = 0;       // Math accumulator: Cumulative tokens bought
+        double totalAmountSpent = 0.0;       // Math accumulator: Cumulative money spent in PHP
+        int totalTicketsRedeemed = 0;      // Math accumulator: Cumulative tickets used
+        int totalPrizesClaimed = 0;        // Math counter: Total prizes won
+        int tokenTransactionsCount = 0;    // Math counter: Number of token transactions
 
         // MAIN CONTROL LOOP (While Loop Structure)
         while (running) {
@@ -57,6 +67,17 @@ public class ArcadeMenu {
                     if (scanner.hasNextInt()) {
                         int tokens = scanner.nextInt();
                         System.out.println("Buying " + tokens + " tokens...");
+
+                        // ==========================================
+                        // INNER LOGIC AND MATH - TOKEN COST CALCULATION
+                        // ==========================================
+                        double transactionCost = tokens * TOKEN_PRICE_RATE; // Core Calculation: Tokens x Rate
+                        totalTokensPurchased += tokens;                   // Core Math: Accumulate tokens
+                        totalAmountSpent += transactionCost;               // Core Math: Accumulate total cost
+                        tokenTransactionsCount++;                          // Increment transaction counter
+
+                        System.out.println("Cost: " + tokens + " tokens x " + TOKEN_PRICE_RATE + " PHP = " + transactionCost + " PHP");
+                        System.out.println("Total Balance: " + totalTokensPurchased + " tokens purchased so far.");
                         System.out.println("Tokens purchased successfully!");
                     } else {
                         System.out.println("Invalid token quantity input.");
@@ -72,17 +93,39 @@ public class ArcadeMenu {
                         int tickets = scanner.nextInt();
                         System.out.println("Claiming prize for " + tickets + " tickets...");
 
-                        // If-Else Block: Evaluating prize tiers based on ticket count
+                        // ==========================================
+                        // INNER LOGIC AND MATH - PRIZE TIER CALCULATIONS
+                        // ==========================================
                         if (tickets >= 500) {
+                            int remainingTickets = tickets - 500; // Core Math: Calculate remaining tickets
+                            totalTicketsRedeemed += 500;           // Core Math: Accumulate redeemed tickets
+                            totalPrizesClaimed++;                  // Core Math: Increment prize count
+
                             System.out.println("Congratulations! Teddy Bear Won!");
+                            System.out.println("Remaining tickets after claim: " + remainingTickets);
                             System.out.println("Prize claimed successfully!");
+
                         } else if (tickets >= 200) {
+                            int remainingTickets = tickets - 200; // Core Math: Calculate remaining tickets
+                            totalTicketsRedeemed += 200;           // Core Math: Accumulate redeemed tickets
+                            totalPrizesClaimed++;                  // Core Math: Increment prize count
+
                             System.out.println("Congratulations! Candy Won!");
+                            System.out.println("Remaining tickets after claim: " + remainingTickets);
                             System.out.println("Prize claimed successfully!");
+
                         } else if (tickets >= 100) {
+                            int remainingTickets = tickets - 100; // Core Math: Calculate remaining tickets
+                            totalTicketsRedeemed += 100;           // Core Math: Accumulate redeemed tickets
+                            totalPrizesClaimed++;                  // Core Math: Increment prize count
+
                             System.out.println("Congratulations! Gum Won!");
+                            System.out.println("Remaining tickets after claim: " + remainingTickets);
                             System.out.println("Prize claimed successfully!");
+
                         } else {
+                            int ticketsNeeded = 100 - tickets; // Core Math: Calculate missing tickets needed for lowest tier
+                            System.out.println("Need " + ticketsNeeded + " more tickets to claim a prize!");
                             System.out.println("Keep Playing to earn more tickets!");
                         }
                     } else {
@@ -93,6 +136,17 @@ public class ArcadeMenu {
                 case 3:
                     // Route 3: Exit System
                     System.out.println("Exiting Arcade Menu. Thank you for playing!");
+
+                    // ==========================================
+                    // INNER LOGIC AND MATH - SESSION SUMMARY CALCULATIONS
+                    // ==========================================
+                    System.out.println("\n--- SESSION SUMMARY & CALCULATIONS ---");
+                    System.out.println("Total Token Transactions: " + tokenTransactionsCount);
+                    System.out.println("Total Tokens Purchased: " + totalTokensPurchased);
+                    System.out.println("Total Amount Spent: " + totalAmountSpent + " PHP");
+                    System.out.println("Total Tickets Redeemed: " + totalTicketsRedeemed);
+                    System.out.println("Total Prizes Claimed: " + totalPrizesClaimed);
+
                     running = false; // Terminate loop
                     break;
 
