@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * ArcadeMenu Class
  * Represents the interactive menu system for the Arcade Counter.
- * Handles token purchases, prize redemptions, and system exit choices
- * using a control loop.
+ * Handles input routing using Scanner reads, switch blocks for top-level menu routing,
+ * and if-else blocks for nested conditional evaluation.
  */
 public class ArcadeMenu {
 
@@ -16,11 +16,9 @@ public class ArcadeMenu {
      * @param scanner The Scanner instance used to read user inputs.
      */
     public void start(Scanner scanner) {
-        // Control flag to manage the execution lifecycle of the menu loop
         boolean running = true;
 
-        // SYSTEM 1: Main Control Loop (While Loop Structure)
-        // Continues displaying menu options and processing user requests until exit is chosen.
+        // MAIN CONTROL LOOP (While Loop Structure)
         while (running) {
             // Display system options header
             System.out.println("\n========================");
@@ -31,63 +29,77 @@ public class ArcadeMenu {
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
 
-            // Read the user's menu option choice
+            // ==========================================
+            // INPUT ROUTING - SCANNER READ
+            // ==========================================
             if (!scanner.hasNextInt()) {
                 if (scanner.hasNext()) {
-                    scanner.next();
+                    scanner.next(); // Clear invalid input token
                     System.out.println("Invalid choice. Please enter a valid number.");
                     continue;
                 } else {
                     break;
                 }
             }
+
+            // Scanner Read: Reading the user's menu option
             int choice = scanner.nextInt();
 
-            // SYSTEM 2: Option Selection & Request Processing
-            if (choice == 1) {
-                // SYSTEM 2.1: Token Purchase System
-                System.out.println("Enter tokens count:");
-                if (scanner.hasNextInt()) {
-                    int tokens = scanner.nextInt();
-                    System.out.println("Buying " + tokens + " tokens...");
-                    System.out.println("Tokens purchased successfully!");
-                } else {
-                    System.out.println("Invalid token quantity input.");
-                }
+            // ==========================================
+            // INPUT ROUTING - SWITCH BLOCK
+            // ==========================================
+            switch (choice) {
+                case 1:
+                    // Route 1: Token Purchase System
+                    System.out.println("Enter tokens count:");
 
-            } else if (choice == 2) {
-                // SYSTEM 2.2: Prize Redemption System
-                System.out.println("Enter tickets count:");
-                if (scanner.hasNextInt()) {
-                    int tickets = scanner.nextInt();
-                    System.out.println("Claiming prize for " + tickets + " tickets...");
-
-                    // Prize Tier Evaluation
-                    if (tickets >= 500) {
-                        System.out.println("Congratulations! Teddy Bear Won!");
-                        System.out.println("Prize claimed successfully!");
-                    } else if (tickets >= 200) {
-                        System.out.println("Congratulations! Candy Won!");
-                        System.out.println("Prize claimed successfully!");
-                    } else if (tickets >= 100) {
-                        System.out.println("Congratulations! Gum Won!");
-                        System.out.println("Prize claimed successfully!");
+                    // Scanner Read & If-Else Block: Token quantity input
+                    if (scanner.hasNextInt()) {
+                        int tokens = scanner.nextInt();
+                        System.out.println("Buying " + tokens + " tokens...");
+                        System.out.println("Tokens purchased successfully!");
                     } else {
-                        System.out.println("Keep Playing to earn more tickets!");
+                        System.out.println("Invalid token quantity input.");
                     }
-                } else {
-                    System.out.println("Invalid ticket count input.");
-                }
+                    break;
 
-            } else if (choice == 3) {
-                // SYSTEM 2.3: Exit System
-                System.out.println("Exiting Arcade Menu. Thank you for playing!");
-                running = false; // Gracefully terminates the while loop
+                case 2:
+                    // Route 2: Prize Claim System
+                    System.out.println("Enter tickets count:");
 
-            } else {
-                // SYSTEM 2.4: Invalid Input System
-                System.out.println("Invalid choice. Please try again.");
-                // Continues loop to prompt user again
+                    // Scanner Read & If-Else Block: Prize Tier Evaluation
+                    if (scanner.hasNextInt()) {
+                        int tickets = scanner.nextInt();
+                        System.out.println("Claiming prize for " + tickets + " tickets...");
+
+                        // If-Else Block: Evaluating prize tiers based on ticket count
+                        if (tickets >= 500) {
+                            System.out.println("Congratulations! Teddy Bear Won!");
+                            System.out.println("Prize claimed successfully!");
+                        } else if (tickets >= 200) {
+                            System.out.println("Congratulations! Candy Won!");
+                            System.out.println("Prize claimed successfully!");
+                        } else if (tickets >= 100) {
+                            System.out.println("Congratulations! Gum Won!");
+                            System.out.println("Prize claimed successfully!");
+                        } else {
+                            System.out.println("Keep Playing to earn more tickets!");
+                        }
+                    } else {
+                        System.out.println("Invalid ticket count input.");
+                    }
+                    break;
+
+                case 3:
+                    // Route 3: Exit System
+                    System.out.println("Exiting Arcade Menu. Thank you for playing!");
+                    running = false; // Terminate loop
+                    break;
+
+                default:
+                    // Route Default: Invalid Choice Handling
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         }
     }
