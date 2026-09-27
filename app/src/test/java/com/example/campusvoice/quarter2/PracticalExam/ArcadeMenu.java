@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 /**
  * ArcadeMenu Class
- * Represents the interactive menu system for the Arcade Counter.
- * Handles input routing using Scanner reads, switch blocks for top-level menu routing,
- * if-else blocks for nested conditional evaluation, and inner logic for mathematical calculations.
+ * Feature file representing the interactive menu system for the Arcade Counter.
+ * Follows Dependency Injection guidelines by accepting a Scanner as a method parameter
+ * and avoiding any instantiation of 'new Scanner(System.in)' inside this feature class.
  */
 public class ArcadeMenu {
 
     /**
      * Starts and executes the Arcade Menu control loop with inner logic and calculations.
      *
-     * @param scanner The Scanner instance used to read user inputs.
+     * @param scanner The Scanner instance injected as a method parameter.
      */
     public void start(Scanner scanner) {
         boolean running = true;
@@ -156,17 +156,5 @@ public class ArcadeMenu {
                     break;
             }
         }
-    }
-
-    /**
-     * Main method to allow standalone execution of the Arcade Menu.
-     *
-     * @param args Command line arguments.
-     */
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArcadeMenu arcadeMenu = new ArcadeMenu();
-        arcadeMenu.start(scanner);
-        scanner.close();
     }
 }
