@@ -18,6 +18,26 @@ public class FastFoodMenu {
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
 
+            int choice = scanner.nextInt();
+
+            if (choice == 1) {
+
+                System.out.println("Burger selected.");
+
+            } else if (choice == 2) {
+
+                System.out.println("Fries selected.");
+
+            } else if (choice == 3) {
+
+                System.out.println("Exiting Fast Food Menu.");
+                running = false;
+
+            } else {
+
+                System.out.println("Invalid choice.");
+
+            }
         }
     }
 }
