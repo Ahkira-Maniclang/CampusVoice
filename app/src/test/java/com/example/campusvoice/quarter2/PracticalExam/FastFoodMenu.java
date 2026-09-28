@@ -8,6 +8,14 @@ public class FastFoodMenu {
 
         boolean running = true;
 
+        // INNER LOGIC AND MATH
+        final double BURGER_COMBO_PRICE = 120.00;
+        final double BURGER_SOLO_PRICE = 80.00;
+        final double FRIES_PRICE = 50.00;
+
+        int totalOrders = 0;
+        double totalAmountSpent = 0.0;
+
         while (running) {
 
             System.out.println("\n======================");
@@ -22,11 +30,35 @@ public class FastFoodMenu {
 
             if (choice == 1) {
 
-                System.out.println("Burger selected.");
+                System.out.println("\n--- BURGER OPTIONS ---");
+                System.out.println("1. Combo - PHP " + BURGER_COMBO_PRICE);
+                System.out.println("2. Solo - PHP " + BURGER_SOLO_PRICE);
+                System.out.print("Choose an option: ");
+
+                int burgerChoice = scanner.nextInt();
+
+                if (burgerChoice == 1) {
+
+                    System.out.println("Burger Combo ordered.");
+                    totalOrders++;
+                    totalAmountSpent += BURGER_COMBO_PRICE;
+
+                } else if (burgerChoice == 2) {
+
+                    System.out.println("Burger Solo ordered.");
+                    totalOrders++;
+                    totalAmountSpent += BURGER_SOLO_PRICE;
+
+                } else {
+
+                    System.out.println("Invalid burger option.");
+                }
 
             } else if (choice == 2) {
 
-                System.out.println("Fries selected.");
+                System.out.println("Fries ordered.");
+                totalOrders++;
+                totalAmountSpent += FRIES_PRICE;
 
             } else if (choice == 3) {
 
@@ -36,7 +68,6 @@ public class FastFoodMenu {
             } else {
 
                 System.out.println("Invalid choice.");
-
             }
         }
     }
