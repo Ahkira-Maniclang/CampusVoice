@@ -6,7 +6,7 @@ public class ManiclangFunction {
     @Test
     public void printMyProfile() {
         // --1. THE INPUT (Storing your personal details in variables)
-        String myName = "Ahkira";
+        String myName = "AhkiraImage";
         String petName = "Kuting";
         String favFood = "Adobo";
         int myAge = 17;
