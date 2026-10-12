@@ -34,18 +34,202 @@
         tools:layout_editor_absoluteY="-228dp" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="1485dp"
-        android:layout_height="1138dp"
+        :id="@+id/imageView8"
+        android:layout_width="1526dp"
+        android:layout_height="1163dp"
         android:background="@null"
         android:padding="0dp"
         android:rotation="180"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.386"
+        app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/wavy_foreground"
-        tools:layout_editor_absoluteY="-85dp" />
+        tools:layout_editor_absoluteY="-124dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="282dp"
+        android:layout_height="236dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/studentwiths_foreground"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="270dp"
+        android:layout_height="224dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/dashboard_foreground"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="387dp"
+        android:layout_height="405dp"
+        android:background="@null"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/bubble_foreground"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="122dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="387dp"
+        android:layout_height="405dp"
+        android:background="@null"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/bubble_foreground"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="235dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="99dp"
+        android:layout_height="90dp"
+        app:srcCompat="@mipmap/profileimage_foreground"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="254dp"
+        android:layout_height="180dp"
+        app:srcCompat="@mipmap/profile_foreground"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="235dp" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="70dp"
+        android:layout_height="69dp"
+        app:srcCompat="@mipmap/notificationimage_foreground"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="402dp" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="284dp"
+        android:layout_height="219dp"
+        app:srcCompat="@mipmap/notification_foreground"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="539dp"
+        android:layout_height="382dp"
+        app:srcCompat="@mipmap/bubble2_foreground"
+        tools:layout_editor_absoluteX="-64dp"
+        tools:layout_editor_absoluteY="596dp" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="539dp"
+        android:layout_height="382dp"
+        app:srcCompat="@mipmap/bubble2_foreground"
+        tools:layout_editor_absoluteX="-64dp"
+        tools:layout_editor_absoluteY="394dp" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="80dp"
+        android:layout_height="77dp"
+        app:srcCompat="@mipmap/conplaintimage_foreground"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="596dp" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="82dp"
+        android:layout_height="78dp"
+        app:srcCompat="@mipmap/feedbackimage_foreground"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <ImageButton
+        :id="@+id/imageButton3"
+        android:layout_width="213dp"
+        android:layout_height="208dp"
+        android:background="@null"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/complaint_foreground"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="432dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="214dp"
+        android:layout_height="211dp"
+        android:background="@null"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/feedback_foreground"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="295dp"
+        android:layout_height="187dp"
+        app:srcCompat="@mipmap/complaint1_foreground"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="673dp" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="296dp"
+        android:layout_height="198dp"
+        app:srcCompat="@mipmap/complaint2_foreground"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="730dp" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/completed_foreground"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="776dp" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="98dp"
+        android:layout_height="92dp"
+        app:srcCompat="@mipmap/pending_foreground"
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="720dp" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="33dp"
+        android:layout_height="30dp"
+        app:srcCompat="@mipmap/completeimage_foreground"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="812dp" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:srcCompat="@mipmap/pendingimage_foreground"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="755dp" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="456dp"
+        android:layout_height="318dp"
+        app:srcCompat="@mipmap/complaintstatus_foreground"
+        tools:layout_editor_absoluteX="-23dp"
+        tools:layout_editor_absoluteY="566dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
