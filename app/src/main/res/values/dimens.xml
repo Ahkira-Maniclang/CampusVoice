@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="login_title_size">20sp</dimen>
+    <dimen name="login_heading_size">24sp</dimen>
+    <dimen name="login_label_size">16sp</dimen>
+    <dimen name="login_body_size">15sp</dimen>
+    <dimen name="login_button_size">18sp</dimen>
+    <dimen name="login_small_size">13sp</dimen>
+    <dimen name="login_role_size">14sp</dimen>
+
+    <!-- WELCOME SCREEN - PHONE -->
+    <dimen name="welcome_title_size">20sp</dimen>
+    <dimen name="welcome_heading_size">24sp</dimen>
+    <dimen name="welcome_subtitle_size">16sp</dimen>
+    <dimen name="welcome_login_button_size">18sp</dimen>
+    <dimen name="welcome_create_button_size">15sp</dimen>
+
+    <dimen name="welcome_logo_width">125dp</dimen>
+    <dimen name="welcome_logo_height">112dp</dimen>
+
+    <dimen name="welcome_illustration_width">220dp</dimen>
+    <dimen name="welcome_illustration_height">165dp</dimen>
+
+    <dimen name="welcome_button_height">52dp</dimen>
+    <dimen name="welcome_vertical_padding">28dp</dimen>
+
+</resources>
