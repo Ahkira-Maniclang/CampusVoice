@@ -89,9 +89,13 @@
         android:layout_height="110dp"
         android:background="@null"
         android:scaleType="centerCrop"
-        app:srcCompat="@mipmap/notification_foreground"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="7dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView32"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toStartOf="@+id/imageView32"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008"
+        app:srcCompat="@mipmap/notification_foreground" />
 
     <ImageView
         android:id="@+id/imageView28"
@@ -108,6 +112,7 @@
         app:srcCompat="@mipmap/profilerectangularbase_foreground" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="347dp"
         android:layout_height="663dp"
         android:layout_marginBottom="56dp"
@@ -157,6 +162,8 @@
         android:layout_width="162dp"
         android:layout_height="132dp"
         android:background="@null"
+        android:contentDescription="TODO"
+        android:importantForAccessibility="no"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/imageView27"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +171,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:layout_constraintVertical_bias="0.928"
-        app:srcCompat="@mipmap/bubble3_foreground" />
+        app:srcCompat="@mipmap/bubble3_foreground"
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton11"
@@ -178,5 +186,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:layout_constraintVertical_bias="0.98"
-        app:srcCompat="@mipmap/arrow_foreground" />
+        app:srcCompat="@mipmap/arrow_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
