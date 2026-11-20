@@ -1,40 +1,83 @@
 package com.example.campusvoice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
 
 public class StudentDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_student_dashboard);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            return insets;
+
+        // CONNECT XML ELEMENTS
+        ImageView backArrow =
+                findViewById(R.id.studentBackArrow);
+
+        ImageButton profileButton =
+                findViewById(R.id.imageButton);
+
+        ImageButton notificationButton =
+                findViewById(R.id.imageButton2);
+
+        ImageButton complaintButton =
+                findViewById(R.id.imageButton3);
+
+        ImageButton feedbackButton =
+                findViewById(R.id.imageButton4);
+
+        // BACK ARROW - RETURN TO LOGIN
+        backArrow.setClickable(true);
+        backArrow.setFocusable(true);
+        backArrow.setElevation(100f);
+        backArrow.bringToFront();
+
+        backArrow.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    StudentDashboard.this,
+                    LoginActivity.class
+            );
+
+            intent.addFlags(
+                    Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_SINGLE_TOP
+            );
+
+            startActivity(intent);
+            finish();
         });
 
-        ImageButton profileBtn = findViewById(R.id.imageButton);
-        ImageButton notificationBtn = findViewById(R.id.imageButton2);
-        ImageButton complaintBtn = findViewById(R.id.imageButton3);
-        ImageButton feedbackBtn = findViewById(R.id.imageButton4);
+        // PROFILE
+        profileButton.setOnClickListener(v ->
+                showUnavailable("Profile"));
 
-        if (profileBtn != null) {
-            profileBtn.setOnClickListener(v -> Toast.makeText(StudentDashboard.this, "Profile clicked", Toast.LENGTH_SHORT).show());
-        }
-        if (notificationBtn != null) {
-            notificationBtn.setOnClickListener(v -> Toast.makeText(StudentDashboard.this, "Notification clicked", Toast.LENGTH_SHORT).show());
-        }
-        if (complaintBtn != null) {
-            complaintBtn.setOnClickListener(v -> Toast.makeText(StudentDashboard.this, "Complaint clicked", Toast.LENGTH_SHORT).show());
-        }
-        if (feedbackBtn != null) {
-            feedbackBtn.setOnClickListener(v -> Toast.makeText(StudentDashboard.this, "Feedback clicked", Toast.LENGTH_SHORT).show());
-        }
+        // NOTIFICATION
+        notificationButton.setOnClickListener(v ->
+                showUnavailable("Notification"));
+
+        // COMPLAINT
+        complaintButton.setOnClickListener(v ->
+                showUnavailable("Complaint"));
+
+        // FEEDBACK
+        feedbackButton.setOnClickListener(v ->
+                showUnavailable("Feedback"));
+    }
+
+    // UNAVAILABLE FEATURE MESSAGE
+    private void showUnavailable(String feature) {
+
+        Toast.makeText(
+                this,
+                feature + " feature is not available in this demo yet.",
+                Toast.LENGTH_SHORT
+        ).show();
     }
 }
