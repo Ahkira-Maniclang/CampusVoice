@@ -1,22 +1,49 @@
 package com.example.campusvoice;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class LoginInterface extends AppCompatActivity {
+
+    private Button loginButton;
+    private Button createAccountButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+
+        // Connect Welcome XML
         setContentView(R.layout.activity_welcome_interface);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            return insets;
+
+        // Link XML buttons to Java
+        loginButton = findViewById(R.id.loginButton);
+
+        createAccountButton =
+                findViewById(R.id.createAccountButton);
+
+        // LOGIN BUTTON
+        loginButton.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    LoginInterface.this,
+                    LoginActivity.class
+            );
+
+            startActivity(intent);
+        });
+
+        // CREATE ACCOUNT BUTTON
+        createAccountButton.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    LoginInterface.this,
+                    CreateAccountActivity.class
+            );
+
+            startActivity(intent);
         });
     }
 }

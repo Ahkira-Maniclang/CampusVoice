@@ -11,40 +11,45 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CampusVoice">
+
+        <!-- WELCOME SCREEN - MAIN LAUNCHER -->
         <activity
             android:name=".LoginInterface"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".StudentOrAdministrator"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".StudentDashboard"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+
+        <!-- LOGIN SCREEN -->
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- CREATE ACCOUNT SCREEN -->
         <activity
-            android:name=".studentOrAdministrator"
+            android:name=".CreateAccountActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- STUDENT DASHBOARD -->
         <activity
-            android:name=".profile"
+            android:name=".StudentDashboard"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- ADMINISTRATOR DASHBOARD -->
         <activity
-            android:name=".notification"
+            android:name=".AdministratorDashboard"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
