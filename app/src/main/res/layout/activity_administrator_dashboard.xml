@@ -2,48 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/adminbg">
 
+    <!-- SCROLLABLE DASHBOARD -->
     <ScrollView
         android:id="@+id/dashboardScroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
         android:scrollbars="none"
+        android:clipToPadding="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="28dp"
-            android:paddingEnd="28dp"
-            android:paddingBottom="24dp">
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="76dp"
+            android:paddingBottom="28dp">
 
             <!-- ADMINISTRATOR HEADER -->
 
             <TextView
                 android:id="@+id/adminLabel"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="ADMINISTRATOR'S"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dashboardTitle"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:gravity="center"
@@ -51,50 +53,44 @@
                 android:text="DASHBOARD"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/adminLabel"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:textStyle="bold" />
 
             <!-- PROFILE CARD -->
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/profileCard"
-                android:layout_width="0dp"
-                android:layout_height="72dp"
-                android:layout_marginTop="28dp"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_marginTop="24dp"
                 android:background="#C9F8F1"
                 android:elevation="3dp"
-                android:padding="12dp"
-                app:layout_constraintTop_toBottomOf="@id/dashboardTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:padding="12dp">
 
                 <ImageView
                     android:id="@+id/profileIcon"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
                     android:src="@drawable/pfpimage"
                     android:scaleType="fitCenter"
                     android:contentDescription="Profile"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/profileText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:gravity="center_vertical"
                     android:text="PROFILE"
                     android:textColor="#185C75"
-                    android:textSize="22sp"
+                    android:textSize="21sp"
                     android:textStyle="bold"
+                    android:gravity="center_vertical"
                     app:layout_constraintStart_toEndOf="@id/profileIcon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -102,41 +98,38 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/notificationCard"
-                android:layout_width="0dp"
-                android:layout_height="72dp"
-                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_marginTop="12dp"
                 android:background="#C9F8F1"
                 android:elevation="3dp"
-                android:padding="12dp"
-                app:layout_constraintTop_toBottomOf="@id/profileCard"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:padding="12dp">
 
                 <ImageView
                     android:id="@+id/notificationIcon"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
                     android:src="@drawable/notifimage"
                     android:scaleType="fitCenter"
                     android:contentDescription="Notifications"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/notificationText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:gravity="center_vertical"
                     android:text="NOTIFICATION"
                     android:textColor="#185C75"
-                    android:textSize="20sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"
+                    android:gravity="center_vertical"
                     app:layout_constraintStart_toEndOf="@id/notificationIcon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -144,15 +137,12 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/reviewCard"
-                android:layout_width="0dp"
-                android:layout_height="180dp"
-                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_marginTop="12dp"
                 android:background="#C9F8F1"
                 android:elevation="3dp"
-                android:padding="12dp"
-                app:layout_constraintTop_toBottomOf="@id/notificationCard"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:padding="12dp">
 
                 <TextView
                     android:id="@+id/reviewTitle"
@@ -161,21 +151,22 @@
                     android:gravity="center"
                     android:text="REVIEW AND&#10;RESPOND TO:"
                     android:textColor="#185C75"
-                    android:textSize="20sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <View
                     android:id="@+id/verticalDivider"
                     android:layout_width="1dp"
-                    android:layout_height="65dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
                     android:background="#55BFC1"
                     app:layout_constraintTop_toBottomOf="@id/reviewTitle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/feedbackText"
@@ -189,7 +180,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/verticalDivider"
                     app:layout_constraintTop_toTopOf="@id/verticalDivider"
-                    app:layout_constraintBottom_toBottomOf="@id/verticalDivider"/>
+                    app:layout_constraintBottom_toBottomOf="@id/verticalDivider" />
 
                 <TextView
                     android:id="@+id/complaintsText"
@@ -203,7 +194,7 @@
                     app:layout_constraintStart_toEndOf="@id/verticalDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/verticalDivider"
-                    app:layout_constraintBottom_toBottomOf="@id/verticalDivider"/>
+                    app:layout_constraintBottom_toBottomOf="@id/verticalDivider" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -211,33 +202,29 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/manageCard"
-                android:layout_width="0dp"
-                android:layout_height="170dp"
-                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="148dp"
+                android:layout_marginTop="12dp"
                 android:background="#C9F8F1"
                 android:elevation="3dp"
-                android:padding="12dp"
-                app:layout_constraintTop_toBottomOf="@id/reviewCard"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:padding="12dp">
 
                 <ImageView
                     android:id="@+id/manageIcon"
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:contentDescription="Manage complaints"
-                    android:scaleType="fitCenter"
+                    android:layout_width="46dp"
+                    android:layout_height="42dp"
                     android:src="@drawable/inboximage"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Manage complaints"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/manageTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:gravity="center"
                     android:text="UPDATE AND MANAGE"
                     android:textColor="#185C75"
@@ -245,17 +232,17 @@
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@id/manageIcon"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <View
                     android:id="@+id/manageDivider"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="8dp"
                     android:background="#55BFC1"
                     app:layout_constraintTop_toBottomOf="@id/manageTitle"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/statusTitle"
@@ -264,17 +251,35 @@
                     android:gravity="center"
                     android:text="COMPLAINT STATUS"
                     android:textColor="#185C75"
-                    android:textSize="18sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@id/manageDivider"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </ScrollView>
+
+    <!-- FIXED BACK ARROW OUTSIDE SCROLLVIEW -->
+
+    <ImageView
+        android:id="@+id/adminBackArrow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/ic_back_arrow"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:contentDescription="Back to Login"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
